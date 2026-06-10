@@ -11,10 +11,10 @@ FocusFlow is a responsive demo website for a university student time management 
 
 ## Run locally
 
-Open `/home/runner/work/FocusFlowApp/FocusFlowApp/W47CHD0G/FocusFlowApp/index.html` directly in a browser, or run:
+Open `index.html` directly in a browser from the project root, or run:
 
 ```bash
-cd /home/runner/work/FocusFlowApp/FocusFlowApp/W47CHD0G/FocusFlowApp
+cd FocusFlowApp
 python -m http.server 4173
 ```
 

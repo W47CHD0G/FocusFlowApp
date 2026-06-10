@@ -168,7 +168,7 @@ const lectureBlocks = {
   'Fri-08:00': 'Lecture: Communication'
 };
 
-let draggedBlock = '';
+let draggedBlock = null;
 
 function renderCalendar() {
   const calendar = document.getElementById('weekly-calendar');
@@ -205,7 +205,7 @@ function renderCalendar() {
 
   document.querySelectorAll('.draggable-block').forEach((block) => {
     block.addEventListener('dragstart', () => {
-      draggedBlock = block.dataset.block || block.textContent || '';
+      draggedBlock = block.dataset.block || block.textContent || null;
     });
   });
 }
