@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusFlow | Student Time Management</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="home">
+      <nav class="nav">
+        <h1>FocusFlow</h1>
+        <div class="nav-links">
+          <a href="#dashboard">Dashboard</a>
+          <a href="#assignments">Assignments</a>
+          <a href="#focus-mode">Focus Mode</a>
+          <a href="#calendar">Calendar</a>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <h2>Take control of your university week.</h2>
+        <p>
+          FocusFlow helps students balance classes, deadlines, and study time in one
+          clear workflow.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel" id="dashboard">
+        <h3>Academic Dashboard</h3>
+        <div class="grid two-up" id="dashboard-grid">
+          <article class="card">
+            <h4>Today's Classes</h4>
+            <ul id="today-classes"></ul>
+          </article>
+          <article class="card">
+            <h4>Today's Schedule Snapshot</h4>
+            <ul id="today-schedule"></ul>
+          </article>
+        </div>
+        <article class="card mt">
+          <h4>Upcoming Assignments Due Next</h4>
+          <ul id="upcoming-assignments"></ul>
+        </article>
+      </section>
+
+      <section class="panel" id="assignments">
+        <h3>Assignment Tracker</h3>
+        <p class="hint">
+          Ranked by urgency score (grade weight + due-soon boost). Higher score = higher priority.
+        </p>
+        <div id="assignment-list" class="assignment-list"></div>
+      </section>
+
+      <section class="panel" id="focus-mode">
+        <h3>Focus Mode (Pomodoro Timer)</h3>
+        <div class="card timer-card">
+          <div class="timer-display">
+            <p id="timer-mode">Focus Session</p>
+            <p id="timer-time">25:00</p>
+            <div class="progress-wrap">
+              <div id="timer-progress"></div>
+            </div>
+            <p id="session-progress">Completed focus sessions today: 0</p>
+          </div>
+          <div class="timer-controls">
+            <label>
+              Focus (minutes)
+              <input id="focus-minutes" type="number" min="1" max="120" value="25" />
+            </label>
+            <label>
+              Break (minutes)
+              <input id="break-minutes" type="number" min="1" max="60" value="5" />
+            </label>
+            <div class="button-row">
+              <button id="start-btn" type="button">Start</button>
+              <button id="pause-btn" type="button">Pause</button>
+              <button id="reset-btn" type="button">Reset</button>
+              <button id="skip-btn" type="button">Skip Mode</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="calendar">
+        <h3>Time-Blocking Weekly Calendar</h3>
+        <p class="hint">Drag study blocks into any weekday time slot.</p>
+        <div class="calendar-wrap">
+          <aside class="card block-bank" aria-label="Draggable Study Blocks">
+            <h4>Study Blocks</h4>
+            <div class="draggable-block" draggable="true" data-block="Deep Work · Math">Deep Work · Math</div>
+            <div class="draggable-block" draggable="true" data-block="Review · Biology">Review · Biology</div>
+            <div class="draggable-block" draggable="true" data-block="Project Sprint">Project Sprint</div>
+          </aside>
+          <div id="weekly-calendar" class="weekly-calendar" aria-label="Weekly Calendar"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>FocusFlow demo prototype for university time management.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
