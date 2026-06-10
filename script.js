@@ -195,10 +195,12 @@ function renderCalendar() {
       slot.classList.add('drag-over');
     });
     slot.addEventListener('dragleave', () => slot.classList.remove('drag-over'));
-    slot.addEventListener('drop', () => {
+    slot.addEventListener('drop', (event) => {
+      event.preventDefault();
       slot.classList.remove('drag-over');
       if (draggedBlock) {
         slot.textContent = draggedBlock;
+        draggedBlock = null;
       }
     });
   });
